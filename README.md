@@ -6,7 +6,9 @@ Looking at specific neighborhoods within the Nashville housing market, we are us
 
 The source data will come from various real estate websites that provide relevant information regarding housing sales, prices, and feature. We will query the RealEstate APis from websites like ZillowGroup API, The Realty Mole API, and MLS
 
+## Communication Protocals
 
+All communication is will be managed via slack with video chats through zoom
 
 
 
