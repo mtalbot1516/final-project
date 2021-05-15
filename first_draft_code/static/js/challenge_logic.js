@@ -24,11 +24,14 @@ let dark = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{
 });
 
 // Create the map object with center, zoom level and default layer. CHANGE TO NASHVILLE
+
 let map = L.map('mapid', {
   center: [36.1627, -86.7816],
   zoom: 12,
   layers: [streets]
 });
+
+
 
 // Create a base layer that holds all three maps.
 let baseMaps = {
@@ -43,7 +46,64 @@ var marker = L.marker([36.055, -86.678], {
   price : 295000 
 }).addTo(map);
 
-marker.bindPopup("Demo House #1<br> City: Antioch<br>State: TN<br> Street: Shihmen<br> Price : $295,000");
+//marker.bindPopup("Demo House #1<br> City: Antioch<br>State: TN<br> Street: Shihmen<br> Price : $295,000");
+
+
+
+// Loop through the cities array and create one marker for each city.
+cities.forEach(function(city) {
+  console.log(city)
+  L.marker(city.location).addTo(map);
+});
+
+// Get data from cities.js
+let cityData = cities;
+
+// Loop through the cities array and create one marker for each city.
+cityData.forEach(function(city) {
+  console.log(city)
+  L.marker(city.location).addTo(map);
+});
+
+
+// Loop through the cities array and create one marker for each city.
+cityData.forEach(function(city) {
+  console.log(city)
+  L.marker(city.location)
+  //.bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street + "</h3>")
+ //.bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street  + "</hr3>" + "<hr> <h4>Price: $" + city.price.toLocaleString() + "</h4>")
+  .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>BB: " + city.BB + " " +  "</h3> <hr> <h3>Street " + city.street  + "</hr3>" + "<hr> <h3>Price: $" + city.price.toLocaleString() + "</h3>")
+  //.bindPopup("<h4>" + city.price.toLocaleString() + "</h4>")
+  .addTo(map);
+});
+
+
+// L. (data,{
+//   pointToLayer: function(feature, latlng) {
+//     console.log(data);
+//     return L.circleMarker(latlng);
+//   },  
+  
+
+// style: styleInfo,
+// onEachFeature: function (feature, layer) {
+//   layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
+// }
+// }).addTo(map);
+
+
+
+// citiesData.forEach(function(cities) {
+//   console.log(cities)
+//   L.circleMarker(cities.location, {
+//       radius:city.state/100000
+//   })
+//   .bindPopup("<h2>" + cities.city + ", " + cities.state + "</h2> <hr> <h3>Population " + cities.population.toLocaleString() + "</h3>")
+//   .addTo(map);  
+// });
+
+
+
 
 //.openPopup()
 

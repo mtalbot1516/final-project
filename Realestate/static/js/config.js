@@ -1,1 +1,1 @@
-const API_KEY ="c96ad01472msh0c4f72fa0f9ffa4p17a39djsn07c6f19c78c7";
+const API_KEY = "pk.eyJ1IjoidGNoYWwxMDAiLCJhIjoiY2tsenY3ZTA1MGV1OTJvcjM2Mm85YWpmYSJ9.W5RSrQ8iKic92avbxEH-nQ"; 
