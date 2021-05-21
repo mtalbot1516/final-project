@@ -51,32 +51,35 @@ var marker = L.marker([36.055, -86.678], {
 
 
 
-// Loop through the cities array and create one marker for each city.
-cities.forEach(function(city) {
-  console.log(city)
-  L.marker(city.location).addTo(map);
-});
+// // Loop through the cities array and create one marker for each city.
+// cities.forEach(function(city) {
+//   console.log(city)
+//   L.marker(city.location).addTo(map);
+// });
 
-// Get data from cities.js
-let cityData = cities;
+// // Get data from cities.js
+// let cityData = cities;
 
-// Loop through the cities array and create one marker for each city.
-cityData.forEach(function(city) {
-  console.log(city)
-  L.marker(city.location).addTo(map);
-});
+// // Loop through the cities array and create one marker for each city.
+// cityData.forEach(function(city) {
+//   console.log(city)
+//   L.marker(city.location).addTo(map);
+// });
 
+d3.json("reformatted_house_value.json").then(function(data) {
+  console.log(data)
+})
 
-// Loop through the cities array and create one marker for each city.
-cityData.forEach(function(city) {
-  console.log(city)
-  L.marker(city.location)
-  //.bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street + "</h3>")
- //.bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street  + "</hr3>" + "<hr> <h4>Price: $" + city.price.toLocaleString() + "</h4>")
-  .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>BB: " + city.BB + " " +  "</h3> <hr> <h3>Street " + city.street  + "</hr3>" + "<hr> <h3>Price: $" + city.price.toLocaleString() + "</h3>")
-  //.bindPopup("<h4>" + city.price.toLocaleString() + "</h4>")
-  .addTo(map);
-});
+// // Loop through the cities array and create one marker for each city.
+// cityData.forEach(function(city) {
+//   console.log(city)
+//   L.marker(city.location)
+//   //.bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street + "</h3>")
+//  //.bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street  + "</hr3>" + "<hr> <h4>Price: $" + city.price.toLocaleString() + "</h4>")
+//   .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>BB: " + city.BB + " " +  "</h3> <hr> <h3>Street " + city.street  + "</hr3>" + "<hr> <h3>Price: $" + city.price.toLocaleString() + "</h3>")
+//   //.bindPopup("<h4>" + city.price.toLocaleString() + "</h4>")
+//   .addTo(map);
+// });
 
 
 // L. (data,{
