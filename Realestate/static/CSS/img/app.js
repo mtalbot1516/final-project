@@ -39,6 +39,5 @@ var mymap = L.map('mapid').setView([36.162, -86.781], 13);
         marker.bindTooltip(toollip)
 
     }
-    
 
 
