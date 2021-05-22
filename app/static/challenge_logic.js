@@ -5,14 +5,14 @@ console.log("working");
 let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
   maxZoom: 18,
-  accessToken: API_KEY
+  accessToken: "pk.eyJ1IjoidGNoYWwxMDAiLCJhIjoiY2tsenY3ZTA1MGV1OTJvcjM2Mm85YWpmYSJ9.W5RSrQ8iKic92avbxEH-nQ"
 });
 
 // We create the second tile layer that will be the background of our map.
 let satelliteStreets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
   maxZoom: 18,
-  accessToken: API_KEY
+  accessToken: "pk.eyJ1IjoidGNoYWwxMDAiLCJhIjoiY2tsenY3ZTA1MGV1OTJvcjM2Mm85YWpmYSJ9.W5RSrQ8iKic92avbxEH-nQ"
 });
 
 //DARKVIEW INSERT HERE
@@ -20,7 +20,7 @@ let satelliteStreets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/sate
 let dark = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
   maxZoom: 12,
-  accessToken: API_KEY
+  accessToken: "pk.eyJ1IjoidGNoYWwxMDAiLCJhIjoiY2tsenY3ZTA1MGV1OTJvcjM2Mm85YWpmYSJ9.W5RSrQ8iKic92avbxEH-nQ"
 });
 
 // Create the map object with center, zoom level and default layer. CHANGE TO NASHVILLE
@@ -46,36 +46,75 @@ var marker = L.marker([36.055, -86.678], {
   price : 295000 
 }).addTo(map);
 
-//marker.bindPopup("Demo House #1<br> City: Antioch<br>State: TN<br> Street: Shihmen<br> Price : $295,000");
+// WE CAN REMOVE THIS STATIC POPUP WE ARE USING A LOOP FUNCTION NOW.
 
 
 
-// Loop through the cities array and create one marker for each city.
-cities.forEach(function(city) {
-  console.log(city)
-  L.marker(city.location).addTo(map);
-});
 
-// Get data from cities.js
-let cityData = cities;
+//Load reformated_house_value, then call json function with comments
+fetch("/database")
+.then(res => res.json())
+.then(jsonLoaded)
+.then(create_marker);
 
-// Loop through the cities array and create one marker for each city.
-cityData.forEach(function(city) {
-  console.log(city)
-  L.marker(city.location).addTo(map);
-});
+// creating a new function json loaded. 
+function jsonLoaded(houses){
+console.log (houses);
+}
 
 
 // Loop through the cities array and create one marker for each city.
-cityData.forEach(function(city) {
-  console.log(city)
-  L.marker(city.location)
+function create_marker (houses) {
+houses.forEach(function(house) {
+  console.log(house)
+  L.marker(house.location)
   //.bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street + "</h3>")
  //.bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street  + "</hr3>" + "<hr> <h4>Price: $" + city.price.toLocaleString() + "</h4>")
-  .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>BB: " + city.BB + " " +  "</h3> <hr> <h3>Street " + city.street  + "</hr3>" + "<hr> <h3>Price: $" + city.price.toLocaleString() + "</h3>")
+  .bindPopup(`
+    <h2 class="${house.house_value}">$${Math.round(house.predicted_price)}</h2>
+    <hr>
+    <h3>${house.city}, ${house.state}</h3>
+    <h3>BB: ${house.beds}, ${house.baths}</h3>
+  `)
   //.bindPopup("<h4>" + city.price.toLocaleString() + "</h4>")
   .addTo(map);
 });
+}
+
+
+
+
+
+
+
+// d3.json('/database').then((houses) => { 
+//   houses.forEach(function(house) {
+//     console.log(house)
+//     L.marker(house.location)
+//     //.bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street + "</h3>")
+//    //.bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street  + "</hr3>" + "<hr> <h4>Price: $" + city.price.toLocaleString() + "</h4>")
+//     .bindPopup(`
+//       <h2 class="${house.house_value}">$${Math.round(house.predicted_price)}</h2>
+//       <hr>
+//       <h3>${house.city}, ${house.state}</h3>
+//       <h3>BB: ${house.beds}, ${house.baths}</h3>
+//     `)
+//     //.bindPopup("<h4>" + city.price.toLocaleString() + "</h4>")
+//     .addTo(map);
+    
+//   });
+// });
+
+// // Loop through the cities array and create one marker for each city.
+// cityData.forEach(function(city) {
+//   console.log(city)
+//   L.marker(city.location)
+//   //.bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street + "</h3>")
+//  //.bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street  + "</hr3>" + "<hr> <h4>Price: $" + city.price.toLocaleString() + "</h4>")
+//   .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>BB: " + city.BB + " " +  "</h3> <hr> <h3>Street " + city.street  + "</hr3>" + "<hr> <h3>Price: $" + city.price.toLocaleString() + "</h3>")
+//   //.bindPopup("<h4>" + city.price.toLocaleString() + "</h4>")
+//   .addTo(map);
+// });
 
 
 // L. (data,{

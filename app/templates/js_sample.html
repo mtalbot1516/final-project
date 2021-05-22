@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% block title %}
+JS Query
+{% endblock title %}
+
+{% block content %}
+<table id='metaTable'></table>
+
+{% endblock content %}
+
+{% block scripts %}
+<script src="{{url_for('static', filename='challenge_logic.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'format.html' %}
+
+{% block title %}
+VU-Example
+{% endblock title %}
+
+
+{% block scripts %}
+<script src="{{url_for('static', filename='challenge_logic.js')}}"></script>
+<script src="{{url_for('static', filename='config.js')}}"></script>
+{% endblock %}
