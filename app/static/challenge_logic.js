@@ -51,37 +51,87 @@ var marker = L.marker([36.055, -86.678], {
 
 
 
-//Load reformated_house_value, then call json function with comments
-fetch("/database")
-.then(res => res.json())
-.then(jsonLoaded)
-.then(create_marker);
+// //Load reformated_house_value, then call json function with comments
+// fetch("/database")
+// .then(res => res.json())
+// .then(jsonLoaded)
+// .then(create_marker);
 
-// creating a new function json loaded. 
-function jsonLoaded(houses){
-console.log (houses);
-}
+// // creating a new function json loaded. 
+// function jsonLoaded(houses){
+// console.log (houses);
+// }
 
 
-// Loop through the cities array and create one marker for each city.
-function create_marker (houses) {
-houses.forEach(function(house) {
-  console.log(house)
-  L.marker(house.location)
-  //.bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street + "</h3>")
- //.bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street  + "</hr3>" + "<hr> <h4>Price: $" + city.price.toLocaleString() + "</h4>")
+// // Loop through the cities array and create one marker for each city.
+// function create_marker (houses) {
+// houses.forEach(function(house) {
+//   console.log(house)
+//   L.marker(house.location)
+//   //.bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street + "</h3>")
+//  //.bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street  + "</hr3>" + "<hr> <h4>Price: $" + city.price.toLocaleString() + "</h4>")
+//   .bindPopup(`
+//     <h2 class="${house.house_value}">$${Math.round(house.predicted_price)}</h2>
+//     <hr>
+//     <h3>${house.city}, ${house.state}</h3>
+//     <h3>BB: ${house.beds}, ${house.baths}</h3>
+//   `)
+//   //.bindPopup("<h4>" + city.price.toLocaleString() + "</h4>")
+//   .addTo(map);
+// // });
+// // }
+// var data = JSON.parse('{{ data | safe}}')
+// data.forEach((val) => {
+//       console.log(val);
+// })
+
+
+d3.json("/database").then(function(data) {
+  console.log(data)
+    JSON.parse(data).forEach(val => {
+    console.log(val);
+    console.log(map)
+    var location = [val.latitude, val.longitude]
+    console.log(typeof val.latitude)
+    console.log(location)
+    L.marker(location)
+  // .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street + "</h3>")
+  // .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street  + "</hr3>" + "<hr> <h4>Price: $" + city.price.toLocaleString() + "</h4>")
   .bindPopup(`
-    <h2 class="${house.house_value}">$${Math.round(house.predicted_price)}</h2>
+    <h2 class="${val.house_value}">${Math.round(val.predicted_price)}</h2>
     <hr>
-    <h3>${house.city}, ${house.state}</h3>
-    <h3>BB: ${house.beds}, ${house.baths}</h3>
+    <h3>${val.city}, ${val.state}</h3>
+    <h3>BB: ${val.beds}, ${val.baths}</h3>
   `)
-  //.bindPopup("<h4>" + city.price.toLocaleString() + "</h4>")
+
+  // .bindPopup("<h4>" + city.price.toLocaleString() + "</h4>")
   .addTo(map);
-});
-}
+  })
+})
 
 
+
+// d3.json("/database").then(function(data) {
+//   var jsonData = data
+//   return (jsonData)
+// });
+
+// JSON.parse(jsonData).forEach(val => {
+//   console.log(val);
+//   var location = [val.latitude, val.longitude]
+//   console.log(location)
+//     L.marker(location)
+// //.bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street + "</h3>")
+// //.bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street  + "</hr3>" + "<hr> <h4>Price: $" + city.price.toLocaleString() + "</h4>")
+// .bindPopup(`
+//   <h2 class="${val.house_value}">${Math.round(val.predicted_price)}</h2>
+//   <hr>
+//   <h3>${val.city}, ${val.state}</h3>
+//   <h3>BB: ${val.beds}, ${val.baths}</h3>
+// `)
+// //.bindPopup("<h4>" + city.price.toLocaleString() + "</h4>")
+// .addTo(map);
+// })
 
 
 

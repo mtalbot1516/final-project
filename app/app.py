@@ -20,7 +20,7 @@ def db_query():
     engine = db.create_engine('postgresql://postgres:finalproject@finalproject.cfnecwioimp0.us-east-2.rds.amazonaws.com:5432/finalProject')
     with engine.connect() as conn, conn.begin():
         data = pd.read_sql("""select * from predicted_housing_data;""", conn)
-    data = data.to_json(orient="index")
+    data = data.to_json(orient="records")
 
     return jsonify(data), 200
 
