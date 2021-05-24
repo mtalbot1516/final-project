@@ -7,4 +7,3 @@ MarkupSafe==2.0.0
 psycopg2-binary==2.8.6
 Werkzeug==2.0.0
 pandas == 1.2.4
-SQLAlchemy @ file:///opt/concourse/worker/volumes/live/0214475e-3c0a-49a9-6cb8-ab2d5c945bef/volume/sqlalchemy_1603812264100/work
