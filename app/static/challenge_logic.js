@@ -32,10 +32,10 @@ d3.json("/database").then(function(data) {
         // .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street + "</h3>")
         // .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street  + "</hr3>" + "<hr> <h4>Price: $" + city.price.toLocaleString() + "</h4>")
         .bindPopup(`
-            <h2 class="${val.house_value}"> $${Math.round(val.formattedValue)}</h2>
+            <h2 class="${val.house_value}"> ${Math.round(val.predicted_price)}</h2>
             <hr>
             <h3>${val.city}, ${val.state}</h3>
-            <h3>BB: ${val.beds}, " " ${val.baths}</h3>
+            <h3>BB: ${val.beds},  ${val.baths}</h3>
         `)
         // .bindPopup("<h4>" + city.price.toLocaleString() + "</h4>")
         .addTo(map);
