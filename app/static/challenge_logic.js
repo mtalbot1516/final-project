@@ -34,7 +34,7 @@ d3.json("/database").then(function(data) {
         .bindPopup(`
             <h2 class="${val.house_value}"> ${Math.round(val.predicted_price)}</h2>
             <hr>
-            <h3>${val.city}, ${val.state}</h3>
+            <h3>${val.city}, ${val.state_or_province}</h3>
             <h3>BB: ${val.beds},  ${val.baths}</h3>
         `)
         // .bindPopup("<h4>" + city.price.toLocaleString() + "</h4>")
