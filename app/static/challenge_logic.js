@@ -33,7 +33,7 @@ d3.json("/database").then(function(data) {
         // else
         //   var color = red 
         val.formattedValue = Math.round(val.predicted_price).toLocaleString('en-US')
-        L.marker(location, color = color)
+        L.marker(location)
         // .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street + "</h3>")
         // .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street  + "</hr3>" + "<hr> <h4>Price: $" + city.price.toLocaleString() + "</h4>")
         .bindPopup(`
