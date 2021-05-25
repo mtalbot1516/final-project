@@ -26,13 +26,15 @@ let baseMaps = {
 };
 d3.json("/database").then(function(data) {
     JSON.parse(data).forEach(val => {
+      console.log(val)
         var location = [val.latitude, val.longitude]
         val.formattedValue = Math.round(val.predicted_price).toLocaleString('en-US')
         L.marker(location)
         // .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street + "</h3>")
         // .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street  + "</hr3>" + "<hr> <h4>Price: $" + city.price.toLocaleString() + "</h4>")
         .bindPopup(`
-            <h2 class="${val.house_value}"> ${Math.round(val.predicted_price)}</h2>
+            <h2 class="${val.house_value}">$ ${val.formattedValue}</h2>
+            <h3> ${val.house_value}
             <hr>
             <h3>${val.city}, ${val.state_or_province}</h3>
             <h3>BB: ${val.beds},  ${val.baths}</h3>
