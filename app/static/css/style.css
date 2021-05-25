@@ -23,3 +23,10 @@ body,
   margin-right: 8px;
   opacity: 0.7;
 }
+
+.good_value{
+  color:green;
+}
+.bad_value{
+  color:red;
+}
