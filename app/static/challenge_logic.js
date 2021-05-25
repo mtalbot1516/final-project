@@ -27,7 +27,7 @@ let baseMaps = {
 d3.json("/database").then(function(data) {
     JSON.parse(data).forEach(val => {
       console.log(val)
-        // var location = [val.latitude, val.longitude]
+        var location = [val.latitude, val.longitude]
         // if val.house_value == "good_value" then:
         //   var color = green
         // else
