@@ -1,14 +1,14 @@
-## Question we are trying to answer
+## Question We Are Trying to Answer
 ​
 Looking at specific neighborhoods within the Nashville housing market, we are using supervised machine learning models to see if we can find houses that are below market value by using a machine learning model. We will train the model on a number of features like square feet, bedrooms, bathrooms, neighborhood, appliances, renovation date, to predict price. The goal would be to find good houses to invest in.
 ​
 ## Source Data
 ​
-The source data will come from various real estate websites that provide relevant information regarding housing sales, prices, and feature. We will query the RealEstate APis from websites like ZillowGroup API, The Realty Mole API, and MLS
+Our data comes from various two different real estate websites, Redfin.com and Realtors.com. We combined the two sets of data to use for our machine learning model.
 ​
 ## Communication Protocals
 ​
-All communication is will be managed via slack with video chats through zoom
+All communication is will be managed via slack with video chats through zoom.
 ​
 ## Machine Learning Model
 ​
