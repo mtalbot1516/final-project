@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% block title %}
+Inline Sample
+{% endblock title %}
+
+{% block content %}
+
+<table class="styled-table shadow-lg">
+    <tr>
+        <th>Columns</th>
+        <th>Table</th>
+        <th>Dataset Name</th>
+        <th>Rows</th>
+        <th>Public?</th>
+    </tr>
+    {% for row in data %}
+    <tr>
+        <td>{{row.columns}}</td>
+        <td>{{row.table}}</td>
+        <td>{{row.name}}</td>
+        <td>{{row.rows}}</td>
+        <td>{{row.public}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}
