@@ -27,14 +27,18 @@ let baseMaps = {
 d3.json("/database").then(function(data) {
     JSON.parse(data).forEach(val => {
       console.log(val)
-        var location = [val.latitude, val.longitude]
+        // var location = [val.latitude, val.longitude]
+        // if val.house_value == "good_value" then:
+        //   var color = green
+        // else
+        //   var color = red 
         val.formattedValue = Math.round(val.predicted_price).toLocaleString('en-US')
-        L.marker(location)
+        L.marker(location, color = color)
         // .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street + "</h3>")
         // .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Street " + city.street  + "</hr3>" + "<hr> <h4>Price: $" + city.price.toLocaleString() + "</h4>")
         .bindPopup(`
             <h2 class="${val.house_value}">$ ${val.formattedValue}</h2>
-            <h3> ${val.house_value}
+            <h3> ${val.house_value} </h3>
             <hr>
             <h3>${val.city}, ${val.state_or_province}</h3>
             <h3>BB: ${val.beds},  ${val.baths}</h3>
