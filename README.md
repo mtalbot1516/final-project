@@ -22,10 +22,10 @@ We used Flask and Heroku for live demos to produce a realtic users GUI interface
 ##
 This project was product as part of cohoert presentation for Data Analytics Boot Camp May 2021 for Triology Educaton Services in conjuction with Vanderbilt University. 
 
-Contact information for contributing analysis and coder
-Timerson Challenger (email pending)
-Brandon Fleming (email pending)
-Matthow Talbot (email pending)
-Jimmy Jordan (email Pending) 
+Contact information for contributing analysis and coders
+-Timerson Challenger (email pending)
+-Brandon Fleming (email pending)
+-Matthow Talbot (email pending)
+-Jimmy Jordan (email Pending) 
 
 
