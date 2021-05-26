@@ -1,4 +1,4 @@
-## Question We Are Trying to Answer
+## Why do you need another Real-Estate App
 ​
 We determined that there is a need for an app that can give home buyers a quick indicator when searching for homes on the market and determining if the asking price is a good or bad value. This need was discovered when a collegue began searching the Nashville, TN area of currently listed homes for sale. In an upward trending market, buyers tend to over bid and are left with tough negotiations between the bank appraisal value and the loan amount. Using our app, buyers will see if the asking price of the home is already above or below fair market value. 
 
