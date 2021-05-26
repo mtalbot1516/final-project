@@ -25,7 +25,7 @@ We used Flask and Heroku for live demos to produce a realtic users GUI interface
 - Completed Project Support folder, python redfin code, machine learning model, and cleanded realtor data
 - Grey Team Dashboard folder, pdf presentation of code finding and links to the demo
 - app folder, depended files for Flask, html, jave script, and leaflet
-- 
+
 ##
 This project was produce as part of cohoert presentation for Data Analytics Boot Camp May 2021 for Triology Educaton Services in conjuction with Vanderbilt University. 
 
