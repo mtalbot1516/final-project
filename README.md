@@ -26,6 +26,9 @@ We used Flask and Heroku for live demos to produce a realtic users GUI interface
 - Grey Team Dashboard folder, pdf presentation of code finding and links to the demo
 - app folder, depended files for Flask, html, jave script, and leaflet
 
+## Link to Powerpoint
+https://docs.google.com/presentation/d/12e-7uf2J2yrdSFjYiisPBdfUksznIiSi9mdmJKEy8HM/edit?usp=sharing
+
 ##
 This project was produce as part of cohoert presentation for Data Analytics Boot Camp May 2021 for Triology Educaton Services in conjuction with Vanderbilt University. 
 
