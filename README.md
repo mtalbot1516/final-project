@@ -1,9 +1,10 @@
 ## Why do you need another Real-Estate App
 ​
-We determined that there is a need for an app that can give home buyers a quick indicator when searching for homes on the market and determining if the asking price is a good or bad value. This need was discovered when a collegue began searching the Nashville, TN area of currently listed homes for sale. In an upward trending market, buyers tend to over bid and are left with tough negotiations between the bank appraisal value and the loan amount. Using our app, buyers will see if the asking price of the home is already above or below fair market value. 
+We determined that there is a need for an app that can give home buyers a quick indicator when searching for homes on the market and determining if the asking price is a good or bad value. This need was discovered when a colleague began searching the Nashville, TN area of currently listed homes for sale. In an upward trending market, buyers tend to over bid and are left with tough negotiations between the bank appraisal value and the loan amount. Using our app, buyers will see if the asking price of the home is already above or below fair market value. 
 
-The MTBJ Real Estate Predictor App uses machine learning to predict a currently listed home for good or bad price value.  Our theory is that by using the app prospective buyers can concenstrate their home-buying efforts on homes that the Machine Learning predicted as a good value. By using the MTBJ Real Estate Predictor App, potential homebuyers can used the predicted value to place a more competitive bid.
+The MTBJ Real Estate Predictor App uses machine learning to predict a currently listed home for good or bad price value.  Our theory is that by using the app prospective buyers can concentrate their home-buying efforts on homes that the Machine Learning predicted as a good value. By using the MTBJ Real Estate Predictor App, potential homebuyers can used the predicted value to place a more competitive bid.
 ​
+
 ## Source Data
 ​
 We sourced MLS listings for the Nashville, TN and surrounding neighborhoods' currently listed properties and recently sold homes using a 6 month window. Redfin dataset included square feet, bedrooms, bathrooms, neighborhood, appliances, and renovation date. We used the data  to train our machine learning model.
